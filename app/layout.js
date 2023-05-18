@@ -1,8 +1,7 @@
 
 import Head from 'next/head';
-import { Navbar } from './components/Navbar';
-import '../public/assets/css/styles.css'
-import '../public/assets/css/mobilemenu.css'
+import { Navbar } from './(components)/Navbar';
+import './globals.css';
 
 
 
@@ -14,115 +13,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
-      <body class="font-rubik dark:bg-dark_primary_bg">
-        <Navbar/>
-        <div className="offcanvas__header lg:hidden dark:bg-gray-800">
-  <div className="offcanvas__inner">
-    <div className="offcanvas__logo">
-      <a className="offcanvas__logo_link" href="index.html">
-        <img
-          className="dark:hidden"
-          src="assets/images/logo.png"
-          alt="Grocee Logo"
-          width={158}
-          height={36}
-        />
-        <img
-          className="hidden dark:block"
-          src="assets/images/logo-light.png"
-          alt="Grocee Logo"
-          width={158}
-          height={36}
-        />
-      </a>
-      <button
-        className="offcanvas__close--btn dark:text-white"
-        data-offcanvas=""
-      >
-        close
-      </button>
-    </div>
-    <nav className="offcanvas__menu">
-      <ul className="offcanvas__menu_ul">
-        <li className="offcanvas__menu_li">
-          <a
-            className="offcanvas__menu_item dark:text-white"
-            href="index-3.html"
-          >
-            Home
-          </a>
-        </li>
-        <li className="offcanvas__menu_li">
-          <a
-            className="offcanvas__menu_item dark:text-white"
-            href="about-2.html"
-          >
-            About
-          </a>
-        </li>
-        <li className="offcanvas__menu_li">
-          <a
-            className="offcanvas__menu_item dark:text-white"
-            href="services-2.html"
-          >
-            Services
-          </a>
-        </li>
-        <li className="offcanvas__menu_li">
-          <a
-            className="offcanvas__menu_item dark:text-white"
-            href="portfolio-2.html"
-          >
-            Portfolio
-          </a>
-        </li>
-        <li className="offcanvas__menu_li">
-          <a
-            className="offcanvas__menu_item dark:text-white"
-            href="blog-2.html"
-          >
-            Blog
-          </a>
-        </li>
-        <li className="offcanvas__menu_li">
-          <a
-            className="offcanvas__menu_item dark:text-white"
-            href="contact-2.html"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-      <button className="flex mx-auto bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1] mt-[30px]">
-        <span className="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={20}
-            height={20}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="feather feather-download"
-          >
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1={12} y1={15} x2={12} y2={3} />
-          </svg>
-        </span>
-        <span className="ltr:xl:pr-[5px] ltr:lg:pr-[5px] rtl:xl:pl-[5px] rtl:lg:pl-[5px] relative z-[8] flex-shrink-0">
-          Download CV
-        </span>
-      </button>
-    </nav>
-  </div>
-</div>
-
-        {children}
-      </body>
+      <Navbar/>
+      {children}
     </html>
   )
 }
